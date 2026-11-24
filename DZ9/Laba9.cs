@@ -34,9 +34,9 @@ namespace DZ9
             double width = Help.ReadDouble("Введите ширину прямоугольника: ");
             double height = Help.ReadDouble("Введите длину прямоугольника: ");
 
-            Point point = new Point(RusColor.RusStr(pointColor), x, y);
-            Circle circle = new Circle(RusColor.RusStr(pointColor), x, y, radius);
-            Rectangle rectangle = new Rectangle(RusColor.RusStr(pointColor), x, y, width, height);
+            Point point = new Point(Color.RusStr(pointColor), x, y);
+            Circle circle = new Circle(Color.RusStr(pointColor), x, y, radius);
+            Rectangle rectangle = new Rectangle(Color.RusStr(pointColor), x, y, width, height);
             Figure[] figureArray = {point, circle, rectangle};
 
             string newPointColor = Help.ReadString("Введите новый цвет точки: ");
@@ -53,8 +53,11 @@ namespace DZ9
             double dy = Help.ReadDouble("Введите, насколько хотите сдвинуть точку по вертикали: ");
             point.MoveHorizontal(dx);
             point.MoveVertical(dy);
+            double dx2 = Help.ReadDouble("Введите, насколько хотите прямоугольник точку по горизонтали: ");
+            double dy2 = Help.ReadDouble("Введите, насколько хотите сдвинуть прямоугольник по вертикали: ");
+            rectangle.Move(dx2, dy2);
 
-            foreach(Figure item in figureArray)
+            foreach (Figure item in figureArray)
             {
                 item.PrintInfo();
             }

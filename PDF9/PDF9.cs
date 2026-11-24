@@ -1,7 +1,6 @@
-﻿using PDF9;
-using System;
+﻿using System;
 
-namespace DZ9
+namespace PDF9
 {
     internal class PDF9
     {
@@ -19,7 +18,7 @@ namespace DZ9
 
             bigRace.AddGame(new ArchGame());
             bigRace.AddGame(new BeachGame());
-            bigRace.AddGame(new FishinfGame());
+            bigRace.AddGame(new FishingGame());
             bigRace.AddGame(new MousetrapGame());
             bigRace.AddGame(new PostmanGame());
             bigRace.AddGame(new SeaGame());

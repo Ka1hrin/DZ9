@@ -20,6 +20,10 @@ namespace DZ9
                 {
                     if (lowerCh == 'я')
                         lowerCh = 'а';
+                    else if (lowerCh == 'е')
+                        lowerCh = 'ё';
+                    else if (lowerCh == 'ё')
+                        lowerCh = 'ж';
                     else
                         lowerCh = (char)(lowerCh + 1);
                     lowerCh = char.IsUpper(ch) ? char.ToUpper(lowerCh) : lowerCh;
@@ -49,7 +53,11 @@ namespace DZ9
                 if (char.IsLetter(lowerCh))
                 {
                     if (lowerCh == 'а')
-                        lowerCh = 'я'; 
+                        lowerCh = 'я';
+                    else if (lowerCh == 'ё')
+                        lowerCh = 'е';
+                    else if (lowerCh == 'ж')
+                        lowerCh = 'ё';
                     else
                         lowerCh = (char)(lowerCh - 1);
                     lowerCh = char.IsUpper(ch) ? char.ToUpper(lowerCh) : lowerCh;

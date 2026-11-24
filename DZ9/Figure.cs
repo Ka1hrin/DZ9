@@ -4,6 +4,7 @@ namespace DZ9
 {
     internal abstract class Figure : ICanChange, ICanMove
     {
+        public abstract string Name { get; }
         private FigureColor _figureColor;
         public bool IsVisible { get; private set; } 
         public double CoordinateX { get; set; }
@@ -27,13 +28,18 @@ namespace DZ9
                 _figureColor = value;
             }
         }
-        #region
+
+        #region Изменение состояния фигуры
         /// <summary>
         /// Изменить цвет фигуры
         /// </summary>
         public void ChangeColor(string newColor)
         {
-            FigureColor = RusColor.RusStr(newColor);
+            FigureColor = Color.RusStr(newColor);
+        }
+        public void ChangeColor(FigureColor color)
+        {
+            FigureColor = color;
         }
 
         /// <summary>
@@ -51,7 +57,8 @@ namespace DZ9
         {
             IsVisible = false;
         }
-
+        #endregion
+        #region Перемещение
         /// <summary>
         /// Сдвинуть фигуру по горизонтали (по оси х)
         /// </summary>
@@ -67,6 +74,17 @@ namespace DZ9
         {
             CoordinateY += dy;
         }
+
+        /// <summary>
+        /// Сдвинуть фигуру сразу по двум осям
+        /// </summary>
+        public void Move(double dx, double dy)
+        {
+            MoveHorizontal(dx);
+            MoveVertical(dy);
+        }
+        #endregion
+
         /// <summary>
         /// Посчитать площадь фигуры
         /// </summary>
@@ -77,8 +95,7 @@ namespace DZ9
         /// </summary>
         public virtual void PrintInfo()
         {
-            Console.WriteLine($"Цвет фигуры: {_figureColor}\nВидимость: {IsVisible}\nКоординаты: ({CoordinateX}, {CoordinateY})");
+            Console.WriteLine($"Цвет фигуры: {Color.RusStr(_figureColor)}\nВидимость: {IsVisible}\nКоординаты: ({CoordinateX}, {CoordinateY})");
         }
-        #endregion
     }
 }

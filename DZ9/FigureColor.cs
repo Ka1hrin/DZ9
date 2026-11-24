@@ -7,7 +7,7 @@ namespace DZ9
         Red, Green, Blue, Yellow, Black, White
     }
 
-    internal class RusColor
+    internal class Color
     {
         public static FigureColor RusStr(string figureColor)
         {
@@ -22,6 +22,20 @@ namespace DZ9
                 case "белый": return FigureColor.White;
                 default: throw new ArgumentException("Неизвестный цвет!");
             }
+        }
+
+        public static string RusStr(FigureColor color)
+        {
+            return (color) switch
+            {
+                FigureColor.Black => "черный",
+                FigureColor.Blue => "голубой",
+                FigureColor.Green => "зеленый",
+                FigureColor.Red => "красный",
+                FigureColor.White => "белый",
+                FigureColor.Yellow => "желтый",
+                _ => throw new ArgumentException("Неизвестный цвет!")
+            };
         }
     }
 }

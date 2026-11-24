@@ -2,7 +2,7 @@
 
 namespace PDF9
 {
-    internal class FishinfGame : IGame
+    internal class FishingGame : IGame
     {
         public string Name { get; } = "Рыбалка";
 

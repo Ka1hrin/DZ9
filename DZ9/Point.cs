@@ -4,7 +4,7 @@ namespace DZ9
 {
     internal class Point : Figure
     {
-        public virtual string Name { get { return "Точка"; } }
+        public override string Name { get { return "Точка"; } }
 
         public Point(FigureColor color, double x, double y) : base(color, x, y)
         {
